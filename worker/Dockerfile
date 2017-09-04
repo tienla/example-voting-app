@@ -2,9 +2,9 @@ FROM microsoft/dotnet:1.1.1-sdk
 
 WORKDIR /code
 
-ADD src/Worker /code/src/Worker
+ADD /worker/src/Worker /worker/code/src/Worker
 
-RUN dotnet restore -v minimal src/Worker \
-    && dotnet publish -c Release -o "./" "src/Worker/" 
+RUN dotnet restore -v minimal /worker/src/Worker \
+    && dotnet publish -c Release -o "./" "/worker/src/Worker/" 
 
-CMD dotnet src/Worker/Worker.dll
+CMD dotnet /worker/src/Worker/Worker.dll
