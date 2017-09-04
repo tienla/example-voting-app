@@ -2,14 +2,14 @@
 FROM python:2.7-slim
 
 # Set the application directory
-WORKDIR /vote/app
+WORKDIR /app
 
 # Install our requirements.txt
-ADD /vote/requirements.txt /app/requirements.txt
-RUN pip install -r /vote/requirements.txt
+ADD requirements.txt /app/requirements.txt
+RUN pip install -r /app/requirements.txt
 
 # Copy our code from the current folder to /app inside the container
-ADD /vote/. /vote/app
+ADD . /app
 
 # Make port 80 available for links and/or publish
 EXPOSE 80
