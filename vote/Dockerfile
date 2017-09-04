@@ -6,7 +6,7 @@ WORKDIR /vote/app
 
 # Install our requirements.txt
 ADD /vote/requirements.txt /app/requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -r /vote/requirements.txt
 
 # Copy our code from the current folder to /app inside the container
 ADD /vote/. /vote/app
